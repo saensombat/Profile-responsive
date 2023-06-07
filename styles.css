@@ -30,7 +30,7 @@ header nav ul li a span{
 main{
     height: 100vh;
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 footer{
@@ -40,14 +40,24 @@ footer{
 
 aside{
     padding: 15px;
+    background: yellow;
 }
 
 article{
     padding: 15px;
+    background: green;
+    color: #fff;
 }
 
 @media only screen and (max-width: 600px){
     main{
         flex-direction: column;
     }
+    aside{
+        height: 100vh;
+    }
+    article{
+        height: 100vh;
+    }
+
 }
