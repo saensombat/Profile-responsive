@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather", serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #000;
+  background-image: url(../Img/img_01.jpg);
+  background-size: cover; /*ทำให้รูปมีขนาดที่พอดีกับ element*/
+  background-position: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: rgb(241, 186, 124);
+}
+
+/*header*/
+
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+nav {
+  width: 100%; /*กำหนดความกว้างของ nav*/
+  height: 60px; /*กำหนดความสูงของ nav*/
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav .links {
+  display: flex;
+  gap: 2rem;
+}
+
+nav .toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.action_btn {
+  background-color: orange;
+  color: #fff;
+  padding: 0.5rem 1.3rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: scale 0.2 ease;
+}
+
+.action_btn:hover {
+  scale: 1.05;
+  color: #fff;
+}
+
+.action_btn:active {
+  scale: 0.95;
+}
+
+/*DROPDOWN MENU*/
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.dropdown_menu.open{
+    height: 190px;
+}
+
+ .dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+ }
+
+/*คำอธิบาย*/
+/*
+.dropdown_menu: เป็นคลาสที่ใช้กำหนดสไตล์สำหรับเมนู dropdown
+display: none;: กำหนดให้ไม่แสดงผลเมื่อยังไม่มีการเปิดเมนู
+position: absolute;: กำหนดให้อยู่ในตำแหน่งแบบ absolute
+right: 2rem;: กำหนดให้อยู่ทางด้านขวา 2 เท่าของหน่วย rem
+top: 60px;: กำหนดให้อยู่ทางด้านบน 60px จากขอบบนของหน้าจอ
+width: 300px;: กำหนดความกว้างของเมนูเป็น 300px
+height: 0;: กำหนดความสูงของเมนูเริ่มต้นเป็น 0
+background: rgba(255,255,255,0.1);: กำหนดพื้นหลังของเมนูเป็นสีขาวโปร่งแสง
+backdrop-filter: blur(15px);: กำหนดเอฟเฟกต์แบลร์ของพื้นหลังเมนู
+border-radius: 10px;: กำหนดรูปร่างของเมนูเป็นรูปร่างวงกลม 10px
+overflow: hidden;: กำหนดให้อุปกรณ์ภายในเมนูที่เกินขอบเขตถูกซ่อนไว้
+transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);: กำหนดเอฟเฟกต์การเปลี่ยนแปลงสูงของเมนูให้เป็นเวลา 0.2 วินาทีโดยใช้คอยเบเซียร์ cubic-bezier(0.175, 0.885, 0.32, 1.275)
+
+.dropdown_menu.open: เป็นคลาสที่เพิ่มเมื่อต้องการเปิดเมนู dropdown
+height: 190px;: กำหนดความสูงของเมนูเมื่อเปิดเป็น 190px
+
+.dropdown_menu li: เป็นสไตล์สำหรับรายการในเมนู dropdown
+padding: 0.7rem;: กำหนดระยะห่างของข้อความในรายการเมนู
+display: flex;: กำหนดให้เรียงแนวนอนในแนวนอน
+align-items: center;: กำหนดให้อยู่ตรงกลางในแนวตั้ง
+justify-content: center;: กำหนดให้อยู่ตรงกลางในแนวนอน
+
+.dropdown_menu .action_btn: เป็นสไตล์สำหรับปุ่มในเมนู dropdown
+width: 100%;: กำหนดให้ความกว้างของปุ่มเท่ากับ 100% ของพื้นที่ที่ใช้ได้ในเมนู dropdown
+display: flex;: กำหนดให้เรียงแนวนอนในแนวนอน
+justify-content: center;: กำหนดให้อยู่ตรงกลางในแนวนอน
+
+*/
+
+
+
+
+/*RESPONSIVE DESIGN*/
+@media only screen and (max-width: 992px) {
+  nav .links,
+  nav .action_btn {
+    display: none;
+  }
+
+  nav .toggle_btn {
+    display: block;
+  }
+
+  .dropdown_menu{
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+      }
+}
+
